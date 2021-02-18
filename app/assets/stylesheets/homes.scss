@@ -1,0 +1,19 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// homes_topの画像とテキスト
+.layer{
+  display: flex;
+  background-image: url("<%= asset_path('cupcakes-690040_1920.png') %>");
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+// 文字の設定
+.layer-txt{
+  color: #000000;
+  letter-spacing: 0.4rem;
+}

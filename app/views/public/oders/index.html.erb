@@ -1,0 +1,27 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h1>注文情報</h1>
+      <%= form_with model: @oders, url: oders_path, local:true do |f| %>
+      <div class="form-group">
+        <h2>支払い方法</h2>
+        <label>
+          <span class="glyphicon glyphicon-stop"></span>お支払い方法<br>
+          <%= f.radio_button :billing_amount, 0, checked: "checked" %>クレジットカード<br>
+          <%= f.radio_button :billing_amount, 1 %>銀行振り込み<br>
+          
+          <span class="glyphicon glyphicon-stop"></span>お届け先<br>
+          <%= f.radio_button :billing_amount, 0, checked: "checked" %>ご自身の住所
+          登録済住所から選択
+          新しいお届け先
+          <br><%= f.submit '新規登録' %>
+        </label>
+      </div>
+
+
+      <h2>お届け先</h2>
+      <% end %>
+    </div>
+  </div>
+</div>
+

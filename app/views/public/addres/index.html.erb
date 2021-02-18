@@ -1,0 +1,46 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+    <h3>配送先登録/一覧</h3>
+    <!--配送先新規登録フォーム-->
+    <%= form_with model:@addre, local:true do |f| %>
+      郵便番号（ハイフンなし）<br><%= f.text_field :postal_code %><br>
+      住所<br><%= f.text_field :address %><br>
+      氏名<br><%= f.text_field :name %><br>
+      <%= f.submit '新規登録' %>
+    <% end %>
+    </div>
+    <!--配送先一覧-->
+<div class="col-md-8 offset-md-1">
+<table class=“table”, display: block>
+  <% @addres.each do |addre| %>
+  <thead>
+    <tr>
+      <th>
+        郵便番号
+      </th>
+      <th>
+        住所
+      </th>
+      <th>
+        宛名
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <%= addre.postal_code %>
+      </th>
+      <th>
+        <%= addre.address %>
+      </th>
+      <th>
+        <%= addre.name %><br>
+        <%= link_to "編集する", edit_addre_path(addre.id) %><br>
+        <%= link_to "削除する", addre_path(addre.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      </th>
+    </tr>
+  </thead>
+  <% end %>
+</table>
+  </div>
+</div>
